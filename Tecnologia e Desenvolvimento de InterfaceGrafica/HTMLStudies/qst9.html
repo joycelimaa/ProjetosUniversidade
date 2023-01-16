@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<html lang="pt-br">
+<head>
+    <title>Questão 9</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+
+        function mediaPercentualeQuantidade() {
+
+            let numeros = document.getElementById("txtNumeros").value;
+            numeros = numeros.split(",");
+            let positivos = 0;
+            let negativos = 0;
+            let soma = 0;
+            let tamanho = numeros.length;
+            let media = 0;
+            let percentualNegativos = 0;
+            let percentualPositivos = 0;
+
+            for (i = 0; i < tamanho; i++) {
+                Number(numeros[i]) > 0 ? positivos++ : negativos++;
+                soma += Number(numeros[i]);
+            }
+
+            media = Number(soma / tamanho);
+            percentualNegativos = Number((negativos / tamanho) * 100);
+            percentualPositivos = Number((positivos / tamanho) * 100);
+
+            document.write("Média: " + media + "<br>");
+            document.write("Quantidade de positivos: " + positivos + "<br>");
+            document.write("Quantidade de negativos: " + negativos + "<br>");
+            document.write("Percentual de números positivos: " + percentualPositivos + "%" + "<br>");
+            document.write("Percentual de números negativos: " + percentualNegativos + "%" );
+        }
+    </script>
+
+</head>
+
+<body>
+    Valores<input type="text" id="txtNumeros">
+
+    <input type="button" value="Enviar" onclick="mediaPercentualeQuantidade()">
+</body>
+
+</html>

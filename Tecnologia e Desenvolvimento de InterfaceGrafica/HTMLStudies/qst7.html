@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 7</title>
+
+    <script>
+
+        function somaImpares(){
+            lista = [];
+            var soma=0
+            var valores = document.getElementById("txtValores").value;
+            valores = valores.split(",");
+
+            var val = parseInt(valores);
+            for(let i=0; i<valores.length; i++){
+                if(parseInt(valores[i]) % 2 == 1 && parseInt(valores[i]) %3 == 0){
+                    soma = soma + parseInt(valores[i]);
+                }
+            }
+            document.write("A soma dos valores ímpare múltiplos de 3 é: " + soma);           
+        }
+        
+    </script>
+
+
+</head>
+<body>
+    Valores <input type="text" id="txtValores">
+    <input type="button" value="Enviar" onclick=somaImpares()>
+</body>
+</html>

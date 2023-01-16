@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 8</title>
+
+    <script>
+        function calcularFatorial(){
+            var valor = 0;
+            var valores = document.getElementById("txtValores").value;
+            valores = valores.split(",");
+            var val = parseInt(valores);
+
+            for(let i=0; i<valores.length; i++){
+                var fatorial=1
+                if(parseInt(valores[i]) == 0 || parseInt(valores[i]) == 1){
+                    fatorial=1;
+                }
+                else{
+                    for(let j = parseInt(valores[i]); j>=1; j--){
+                        fatorial = fatorial * j; 
+                        
+                    }
+                    
+                }document.write("Fatorial de "+ valores[i] +" é "+fatorial+"<br>"); 
+                
+            }
+            
+        }
+    </script>
+
+</head>
+<body>
+    Valores para calcular o fatorial <input type="text" id="txtValores">
+    <input type="button" value="Enviar" onclick=calcularFatorial()>
+</body>
+</html>
